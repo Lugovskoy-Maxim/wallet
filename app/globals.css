@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --maximum-page-width: 1440px;
+  --font-geist-roboto: 'Roboto', sans-serif;
+  --brand-50: #eff6ff;
+  --brand-100: #daebff;
+  --brand-200: #bddcff;
+  --brand-300: #90c7ff;
+  --brand-400: #5ca9fe;
+  --brand-500: #3685fb;
+  --brand-600: #155eef;
+  --brand-700: #1850dd;
+  --brand-800: #1b41b2;
+  --brand-900: #1b3b8d;
+  --brand-950: #162555;
+  --gray-50: #f9fafb;
+  --gray-100: #eceff2;
+  --gray-200: #d5dde2;
+  --gray-300: #b0bfc9;
+  --gray-400: #859bab;
+  --gray-500: #668091;
+  --gray-600: #516778;
+  --gray-700: #425462;
+  --gray-800: #394753;
+  --gray-900: #333e47;
+  --gray-950: #22292f;
+  --success-50: #edfcf3;
+  --success-100: #d3f8e0;
+  --success-200: #aaf0c7;
+  --success-300: #73e2a7;
+  --success-400: #3bcc84;
+  --success-500: #17b26a;
+  --success-600: #0b9055;
+  --success-700: #097347;
+  --success-800: #0a5b39;
+  --success-900: #094b31;
+  --success-950: #042a1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  /* color: inherit; */
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  :root {
+  --maximum-page-width: 768px;
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
