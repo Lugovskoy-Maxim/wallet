@@ -11,8 +11,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <Link href={"#"} className={styles.logo}>
-        <Image src={logo_icon} alt="логотип" width={44} height={36} />
-        <span>Приложение</span>
+        <Image src={logo_icon} alt="логотип" width={32} height={32} />
+        {/* <span>Приложение</span> */}
       </Link>
       <nav>
         <Link href={"#"}>Обзор</Link>
@@ -20,7 +20,7 @@ export default function Header() {
         <Link href={"#"}>Планирование</Link>
         <Link href={"#"}>Категории</Link>
         <Link href={"#"}>Кошельки</Link>
-        <Link href={"#"}>Аналитика</Link>
+        {/* <Link href={"#"}>Аналитика</Link> */}
       </nav>
       <div className={styles.user}>
         <Link href={"#"}>
