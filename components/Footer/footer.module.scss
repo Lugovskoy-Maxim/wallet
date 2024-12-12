@@ -4,7 +4,7 @@
   flex-shrink: 0;
   width: 100%;
   max-width: var(--maximum-page-width);
-  padding: 20px 70px;
+  padding: 20px 112px;
   height: var(--footer-height);
   background: var(--gray-950);
   gap: 32px;
@@ -89,4 +89,9 @@
 }
 
 
-
+@media screen and (max-width: 1080px) {
+  .footer {
+    padding: 20px 40px;
+  }
+  
+}
