@@ -27,6 +27,10 @@
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     background: var(--background);
 
+    &:hover {
+      background: var(--gray-50);
+    }
+
     button {
       padding: 20px;
       background: transparent;
@@ -35,6 +39,7 @@
       align-items: center;
       cursor: pointer;
       gap: 12px;
+      width: 100%;
 
       .heading {
         display: flex;

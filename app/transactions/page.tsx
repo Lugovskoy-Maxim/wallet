@@ -1,9 +1,14 @@
-
+import Filters from "@/components/Filters/Filters";
+import LastTransactions from "@/components/LastTransactions/LastTransactions";
+import TransactionActions from "@/components/TransactionActions/TransactionActions";
+import styles from './transactions.module.scss'
 
 export default function Transactions() {
   return (
-<>
-123
-</>
+    <section className={styles.transactions}>
+      <Filters />
+      <TransactionActions />
+      <LastTransactions />
+    </section>
   );
 }

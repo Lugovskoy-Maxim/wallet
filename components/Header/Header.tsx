@@ -10,13 +10,13 @@ import styles from "./header.module.scss";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link href={"#"} className={styles.logo}>
+      <Link href={"/"} className={styles.logo}>
         <Image src={logo_icon} alt="логотип" width={32} height={32} />
-        {/* <span>Приложение</span> */}
+        <span>Wallet Watch</span>
       </Link>
       <nav>
-        <Link href={"#"}>Обзор</Link>
-        <Link href={"#"}>Транзакции</Link>
+        <Link href={"/"}>Обзор</Link>
+        <Link href={"/transactions"}>Транзакции</Link>
         <Link href={"#"}>Планирование</Link>
         <Link href={"#"}>Категории</Link>
         <Link href={"#"}>Кошельки</Link>
