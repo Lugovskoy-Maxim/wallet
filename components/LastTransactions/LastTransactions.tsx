@@ -2,19 +2,31 @@
 import { useState } from "react";
 import styles from "./lastTransactions.module.scss";
 import { lastTransactionsData } from "@/constants/MokeData";
+import Image from "next/image";
+import action_icon from "../../public/icons/action_icon.svg";
 
-interface DataTransactionType {
+type Transaction = {
   id: number;
   name: string;
   date: string;
   type: string;
   sum: number;
   category: string;
+};
+
+function getSum(type: Transaction["type"], sum: number) {
+  if (type === "income") {
+    return `+ ${sum} ₽`;
+  } else if (type === "transfer") {
+    return `${sum} ₽`;
+  } else {
+    return `- ${sum} ₽`;
+  }
 }
 
 export default function LastTransactions() {
-  // заменить на данные из state rtk
-  const [dataTransaction] = useState<DataTransactionType[]>(lastTransactionsData);
+  const [transactions] = useState<Transaction[]>(lastTransactionsData);
+  // const [numberRecentTrans, setNumberRecentTrans] = useState(10); // Текущая страница
 
   return (
     <div className={styles.lastTransactions}>
@@ -23,7 +35,6 @@ export default function LastTransactions() {
         <p>Проверьте свои последние транзакции</p>
       </div>
       <div className={styles.thead}>
-        <p className={styles.icon}></p>
         <p className={styles.name}>Название</p>
         <p className={styles.date}>Дата</p>
         <p className={styles.category}>Категория</p>
@@ -31,32 +42,23 @@ export default function LastTransactions() {
         <p className={styles.action}></p>
       </div>
       <ul className={styles.list}>
-        {dataTransaction.map((item) => (
-          <li key={item.id}>
-            <p className={styles.icon}>i</p>
-            <p className={styles.name}>{item.name}</p>
-            <p className={styles.date}>{item.date}</p>
-            <p className={styles.category}>{item.category}</p>
-            <p
-              className={`${styles.sum} ${
-                item.type === "income"
-                  ? styles.income
-                  : item.type === "transfer"
-                  ? styles.transfer
-                  : styles.expense
-              }`}
-            >
-              {item.type === "income"
-                ? "+₽"
-                : item.type === "transfer"
-                ? " ₽"
-                : "-₽"}
-              {item.sum}
+        {transactions.map(({ id, name, date, type, sum, category }) => (
+          <li key={id}>
+            <p className={styles.name}>{name}</p>
+            <p className={styles.date}>{date}</p>
+            <p className={styles.category}>{category}</p>
+            <p className={`${styles.sum} ${styles[type]}`}>
+              {getSum(type, sum)}
             </p>
-            <p className={styles.action}>X</p>
+            <p className={styles.action}>
+              <button type="button">
+                <Image src={action_icon} alt={"Опции"} />
+              </button>
+            </p>
           </li>
         ))}
       </ul>
+      {<button className={styles.loadMore}>Загрузить еще</button>}
     </div>
   );
 }
