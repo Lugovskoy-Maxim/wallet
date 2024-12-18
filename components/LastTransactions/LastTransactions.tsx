@@ -1,76 +1,20 @@
 "use client";
 import { useState } from "react";
 import styles from "./lastTransactions.module.scss";
+import { lastTransactionsData } from "@/constants/MokeData";
 
 interface DataTransactionType {
   id: number;
   name: string;
   date: string;
-  type: "income" | "expenses" | "transfer";
+  type: string;
   sum: number;
   category: string;
 }
 
 export default function LastTransactions() {
   // заменить на данные из state rtk
-  const [dataTransaction] = useState<DataTransactionType[]>([
-    {
-      id: 1,
-      name: "Покупка продуктов",
-      date: "15-04-2023",
-      type: "income",
-      sum: 5000,
-      category: "Супермаркеты",
-    },
-    {
-      id: 2,
-      name: "Зарплата",
-      date: "05-04-2023",
-      type: "expenses",
-      sum: 8000,
-      category: "Зарплата ",
-    },
-    {
-      id: 3,
-      name: "На новый велосипед",
-      date: "25-03-2023",
-      type: "transfer",
-      sum: 3000,
-      category: "Копилка",
-    },
-    {
-      id: 4,
-      name: "Поступления от продажи вещей",
-      date: "10-04-2023",
-      type: "income",
-      sum: 7000,
-      category: "Без категории",
-    },
-    {
-      id: 5,
-      name: "Обслуживание автомобиля",
-      date: "20-04-2023",
-      type: "expenses",
-      sum: 2500,
-      category: "Авто",
-    },
-    {
-      id: 7,
-      name: "Получение премии",
-      date: "30-04-2023",
-      type: "expenses",
-      sum: 5000,
-      category: "Без категории",
-    },
-    {
-      id: 8,
-      name: "Погашение кредита",
-      date: "15-05-2023",
-      type: "income",
-      sum: 3500,
-      category: "Кредит",
-    },
-  ]);
+  const [dataTransaction] = useState<DataTransactionType[]>(lastTransactionsData);
 
   return (
     <div className={styles.lastTransactions}>
