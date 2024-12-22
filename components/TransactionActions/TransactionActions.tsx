@@ -1,64 +1,79 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
 
-import addIncomes_icon from '../../public/icons/addincomes.png';
-import addExpenses_icon from '../../public/icons/addexpenses.png';
-import addSwap_icon from '../../public/icons/addswap.png';
+import Popup from "../Popup/Popup";
+import TransactionButton from "./TransactionButton/TransactionButton";
+
+import addIncomes_icon from "../../public/icons/addIncomes.png";
+import addExpenses_icon from "../../public/icons/addExpenses.png";
+import addSwap_icon from "../../public/icons/addSwap.png";
 
 import styles from "./transactionActions.module.scss";
 
+interface IProps {
+  isPopupOpen: boolean;
+  type: "incomes" | "expenses" | "empty" | "swap"
+}
+
 export default function TransactionActions() {
+  const [isPopupData, setPopupData] = useState<IProps>({
+    isPopupOpen: false,
+    type: "empty",
+  });
+
+  const handleClose = () => {
+    setPopupData({
+      type: "empty",
+      isPopupOpen: false,
+    });
+  };
+
   return (
     <section className={styles.transactionActions}>
       <ul className={styles.list}>
-        <li>
-          <button type="button">
-            <div>
-              <Image
-                src={addIncomes_icon}
-                width={48}
-                height={48}
-                alt="Доходы"
-              />
-            </div>
-            <div className={styles.heading}>
-              <h2>Добавить доходы</h2>
-              <p>Контролируйте свои доходы</p>
-            </div>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <div>
-              <Image
-                src={addExpenses_icon}
-                width={48}
-                height={48}
-                alt="Расходы"
-              />
-            </div>
-            <div className={styles.heading}>
-              <h2>Добавить расходы</h2>
-              <p>Контролируйте свои расходы</p>
-            </div>
-          </button>
-        </li>
-        <li>
-          <button type="button">
-            <div>
-              <Image
-                src={addSwap_icon}
-                width={48}
-                height={48}
-                alt="Перевод"
-              />
-            </div>
-            <div className={styles.heading}>
-              <h2>Перевести деньги</h2>
-              <p>Совершите перевод на другой счёт</p>
-            </div>
-          </button>
-        </li>
+        <TransactionButton
+          onClick={() =>
+            setPopupData({
+              type: "incomes",
+              isPopupOpen: true,
+            })
+          }
+          imageSrc={addIncomes_icon.src}
+          altText="Доходы"
+          heading="Добавить доходы"
+          subheading="Контролируйте свои доходы"
+        />
+        <TransactionButton
+          onClick={() =>
+            setPopupData({
+              type: "expenses",
+              isPopupOpen: true,
+            })
+          }
+          imageSrc={addExpenses_icon.src}
+          altText="Расходы"
+          heading="Добавить расходы"
+          subheading="Контролируйте свои расходы"
+        />
+        <TransactionButton
+          onClick={() =>
+            setPopupData({
+              type: "swap",
+              isPopupOpen: true,
+            })
+          }
+          imageSrc={addSwap_icon.src}
+          altText="Перевод"
+          heading="Перевести деньги"
+          subheading="Совершите перевод на другой счёт"
+        />
       </ul>
+      {isPopupData.isPopupOpen && (
+        <Popup
+          onClose={handleClose}
+          type={isPopupData.type}
+        />
+      )}
     </section>
   );
 }
