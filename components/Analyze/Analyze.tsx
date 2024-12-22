@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./analyze.module.scss";
 import ExamplePieChart from "../PieChart/PieChart";
 import LastTransactions from "../LastTransactions/LastTransactions";
+import { analyzeData } from "@/constants/MokeData";
 
 interface DataType {
   id?: number;
@@ -13,14 +14,7 @@ interface DataType {
 
 export default function Analyze() {
   // заменить на данные из state rtk
-  const [data] = useState<DataType[]>([
-    { name: "Дом", value: 36000, color: "#9e77ed" },
-    { name: "Кредиты", value: 12000, color: "#f04438" },
-    { name: "Авто", value: 3000, color: "#0ba5ec" },
-    { name: "Украшения", value: 5680.33, color: "#17B26A" },
-    { name: "Продукты", value: 4320, color: "#4e5ba6" },
-    { name: "Прочее", value: 2000, color: "#ECEFF2" },
-  ]);
+  const [data] = useState<DataType[]>(analyzeData);
 
   return (
     <section className={styles.analyze}>
