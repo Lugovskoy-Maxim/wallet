@@ -30,7 +30,7 @@ export default function CookieNotificationBanner() {
       className={`${styles.cookieBanner} ${isVisible ? styles.visible : ""}`}
     >
       <div className={styles.info}>
-        <Image src={cookie_icon} alt="Cookie icon" width={55} height={55} />
+        <Image src={cookie_icon} alt="Cookie icon" />
 
         <p>
           Мы используем некоторые файлы cookie, которые помогают повысить
@@ -41,7 +41,7 @@ export default function CookieNotificationBanner() {
         </p>
       </div>
       <button className={styles.button} onClick={handleAcceptCookies}>
-        Принять
+        Ок
       </button>
     </div>
   );
