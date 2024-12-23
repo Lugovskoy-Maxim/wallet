@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./analyze.module.scss";
 import ExamplePieChart from "../PieChart/PieChart";
 import LastTransactions from "../LastTransactions/LastTransactions";
-import { analyzeData } from "@/constants/MokeData";
+import { analysisData  } from "@/constants/MokeData";
 
 interface DataType {
   id?: number;
@@ -14,7 +14,7 @@ interface DataType {
 
 export default function Analyze() {
   // заменить на данные из state rtk
-  const [data] = useState<DataType[]>(analyzeData);
+  const [data] = useState<DataType[]>(analysisData );
 
   return (
     <section className={styles.analyze}>

@@ -10,7 +10,7 @@ export default function Balance() {
         <p>₽{item.value}</p>
         <div>
           <Image src={item.icon} alt='Изменения' width={0} height={0}/>
-          {item.plus ? '' : '-'}{item.change}
+          {item.isPositiveChange ? '' : '-'}{item.change}
         </div>
       </div>
     </div>
