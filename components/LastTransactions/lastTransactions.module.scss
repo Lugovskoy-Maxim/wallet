@@ -1,15 +1,19 @@
 .lastTransactions {
   border: 1px solid var(--gray-100);
   border-radius: 12px;
-  // max-width: 800px;
   width: 100%;
   height: auto;
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+
 
   .header {
     padding: 24px;
     width: 100%;
     height: 100px;
+    background-image: url('../../public/bg/piggy_bank_broken.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
 
     p {
       font-weight: 400;
