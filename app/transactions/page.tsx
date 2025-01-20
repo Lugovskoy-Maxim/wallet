@@ -6,8 +6,8 @@ import styles from './transactions.module.scss'
 export default function Transactions() {
   return (
     <section className={styles.transactions}>
-      <Filters />
       <TransactionActions />
+      <Filters />
       <LastTransactions />
     </section>
   );

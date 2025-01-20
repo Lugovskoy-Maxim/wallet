@@ -32,44 +32,45 @@ export default function LastTransactions() {
   // const [numberRecentTrans, setNumberRecentTrans] = useState(10); // Текущая страница
 
   return (
-    <div className={styles.lastTransactions}>
-      <div className={styles.header}>
-        <h2>Последние транзакции</h2>
-        <p>Проверьте свои последние транзакции</p>
+    <section className={styles.container}>
+      <div className={styles.lastTransactions}>
+        <div className={styles.header}>
+          <h2>Последние транзакции</h2>
+          <p>Проверьте свои последние транзакции</p>
+        </div>
+        <div className={styles.thead}>
+          <span className={styles.color}></span>
+          <p className={styles.name}>Название</p>
+          <p className={styles.date}>Дата</p>
+          <p className={styles.category}>Категория</p>
+          <p className={styles.amount}>Сумма</p>
+          <p className={styles.action}></p>
+        </div>
+        <ul className={styles.list}>
+          {transactions.map(
+            ({ id, name, date, type, amount: amount, category }) => (
+              <li key={id}>
+                <span
+                  className={styles.color}
+                  style={{ backgroundColor: category.color }}
+                ></span>
+                <p className={styles.name}>{name}</p>
+                <p className={styles.date}>{date}</p>
+                <p className={styles.category}>{category.name}</p>
+                <p className={`${styles.amount} ${styles[type]}`}>
+                  {geAmount(type, amount)}
+                </p>
+                <p className={styles.action}>
+                  <button type="button">
+                    <Image src={action_icon} alt={"Опции"} />
+                  </button>
+                </p>
+              </li>
+            )
+          )}
+        </ul>
       </div>
-      <div className={styles.thead}>
-        <span className={styles.color}></span>
-        <p className={styles.name}>Название</p>
-        <p className={styles.date}>Дата</p>
-        <p className={styles.category}>Категория</p>
-        <p className={styles.amount}>Сумма</p>
-        <p className={styles.action}></p>
-      </div>
-      <ul className={styles.list}>
-        {transactions.map(
-          ({ id, name, date, type, amount: amount, category }) => (
-            <li key={id}>
-              <span
-                className={styles.color}
-                style={{ backgroundColor: category.color }}
-              ></span>
-              <p className={styles.name}>{name}</p>
-              <p className={styles.name}>{name}</p>
-              <p className={styles.date}>{date}</p>
-              <p className={styles.category}>{category.name}</p>
-              <p className={`${styles.amount} ${styles[type]}`}>
-                {geAmount(type, amount)}
-              </p>
-              <p className={styles.action}>
-                <button type="button">
-                  <Image src={action_icon} alt={"Опции"} />
-                </button>
-              </p>
-            </li>
-          )
-        )}
-      </ul>
-      {<button className={styles.loadMore}>Загрузить еще</button>}
-    </div>
+      <button className={styles.loadMore}>Загрузить еще</button>
+    </section>
   );
 }

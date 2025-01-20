@@ -1,6 +1,17 @@
 import arrowUp from '../public/icons/arrow_up.svg';
 import arrowDown from '../public/icons/arrow_down.svg';
 
+export const walletsList = [
+  { 
+    id: 1,
+    name: 'Основной кошелек',
+    balance: 35502.45,
+    currency: 'RUB',
+    isDefault: true,
+    
+  },
+]
+
 // Данные баланса
 export const balanceData = [
   {

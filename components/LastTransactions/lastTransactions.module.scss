@@ -1,16 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+
 .lastTransactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid var(--gray-100);
   border-radius: 12px;
   width: 100%;
   height: auto;
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
 
-
   .header {
     padding: 24px;
     width: 100%;
     height: 100px;
-    background-image: url('../../public/bg/piggy_bank_broken.png');
+    background-image: url("../../public/bg/piggy_bank_broken.png");
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain;
@@ -28,7 +38,7 @@
     flex-shrink: 0;
     width: 25px;
 
-    button{
+    button {
       border: none;
       background: none;
       cursor: pointer;
@@ -78,6 +88,7 @@
     flex-direction: column;
     gap: 12px;
     padding: 0 24px;
+    width: 100%;
 
     li {
       display: flex;
@@ -114,4 +125,16 @@
     height: 10px;
     border-radius: 3px;
   }
+}
+
+.loadMore {
+  cursor: pointer;
+  border: 1px solid var(--brand-200);
+  border-radius: 12px;
+  width: 260px;
+  height: 45px;
+  background: var(--brand-50);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--brand-600);
 }
