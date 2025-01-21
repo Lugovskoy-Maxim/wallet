@@ -2,20 +2,94 @@
   border: 1px solid var(--gray-100);
   border-radius: 12px;
   width: 100%;
-  height: auto;
+  margin: 0 auto;
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
 
+  .table {
+    width: 100%;
+    border-spacing: 0; // Отступы между ячейками
+    border-collapse: collapse; // Границы ячеек
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    thead th {
+      background-color: var(--gray-50);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--gray-900);
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--gray-50); // Чередование фона строк
+    }
+
+    .color {
+      border-radius: 8px;
+      margin-right: 10px;
+      padding: 2px;
+    }
+
+    .name {
+      min-width: 180px;
+    }
+
+    .date,
+    .category,
+    .amount {
+      white-space: nowrap;
+    }
+
+    .amount {
+      text-align: right;
+    }
+
+    .action {
+      width: 60px;
+      text-align: center;
+    }
+
+    .income {
+      color: var(--success-500);
+    }
+
+    .expenses {
+      color: #C53440;
+    }
+
+    .transfer {
+      color: var(--brand-600);
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
 
   .header {
     padding: 24px;
     width: 100%;
     height: 100px;
-    background-image: url('../../public/bg/piggy_bank_broken.png');
+    background-image: url("../../public/bg/piggy_bank_broken.png");
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain;
 
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
     p {
+      margin: 8px 0 0;
       font-weight: 400;
       font-size: 14px;
       line-height: 143%;
@@ -23,95 +97,21 @@
     }
   }
 
-  .icon,
-  .action {
-    flex-shrink: 0;
-    width: 25px;
-
-    button{
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-  }
-
-  .name {
-    min-width: 240px;
-    color: var(--gray-900);
-  }
-  .date,
-  .category,
-  .amount,
-  .name {
+  .loadMore {
+    display: flex;
+    margin: 24px auto;
+    padding: 12px 24px;
+    border: none;
+    background-color: var(--brand-500);
+    color: white;
+    font-size: 16px;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 150%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-    width: 100%;
-    color: var(--gray-600);
-  }
-
-  .thead {
-    display: flex;
-    align-items: center;
-    background: var(--gray-50);
-    border-top: 1px solid var(--gray-100);
-    border-bottom: 1px solid var(--gray-100);
-    padding: 0px 24px;
-    width: 100%;
-    height: 34px;
-    gap: 5px;
-
-    .date,
-    .category,
-    .amount,
-    .name {
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 150%;
-      width: 100%;
+    &:hover {
+      background-color: var(--brand-600);
     }
-  }
-
-  .list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 24px;
-
-    li {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      height: 48px;
-      gap: 5px;
-      border-bottom: 1px solid var(--gray-100);
-
-      .income {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 143%;
-        color: var(--success-500);
-      }
-      .expense {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 143%;
-        color: #c53440;
-      }
-      .transfer {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 143%;
-        color: var(--brand-600);
-      }
-    }
-  }
-
-  .color {
-    flex-shrink: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 3px;
   }
 }
