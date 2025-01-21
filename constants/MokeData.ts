@@ -50,7 +50,7 @@ export const recentTransactionsData = [
   {
     id: 1,
     name: 'Покупка продуктов',
-    date: '15-04-2023',
+    date: '2023-04-15',
     type: 'expenses',
     amount: 5000,
     category: {
@@ -61,7 +61,7 @@ export const recentTransactionsData = [
   {
     id: 2,
     name: 'Зарплата',
-    date: '05-04-2023',
+    date: '2023-04-05',
     type: 'income',
     amount: 8000,
     category: {
@@ -72,7 +72,7 @@ export const recentTransactionsData = [
   {
     id: 3,
     name: 'На новый велосипед',
-    date: '25-03-2023',
+    date: '2023-03-25',
     type: 'transfer',
     amount: 3000,
     category: {
@@ -83,7 +83,7 @@ export const recentTransactionsData = [
   {
     id: 4,
     name: 'Поступления от продажи вещей',
-    date: '10-04-2023',
+    date: '2023-04-10',
     type: 'income',
     amount: 7000,
     category: {
@@ -94,7 +94,7 @@ export const recentTransactionsData = [
   {
     id: 5,
     name: 'Обслуживание автомобиля',
-    date: '20-04-2023',
+    date: '2023-04-20',
     type: 'expenses',
     amount: 2500,
     category: {
@@ -105,7 +105,7 @@ export const recentTransactionsData = [
   {
     id: 7,
     name: 'Получение премии',
-    date: '30-04-2023',
+    date: '2023-04-30',
     type: 'expenses',
     amount: 5000,
     category: {
@@ -116,11 +116,88 @@ export const recentTransactionsData = [
   {
     id: 8,
     name: 'Погашение кредита',
-    date: '15-05-2023',
+    date: '2023-05-15',
     type: 'income',
     amount: 3500,
     category: {
       name: 'Кредит',
+      color: '#f04438'
+    }
+  },
+  {
+    id: 9,
+    name: 'Оплата мобильного телефона',
+    date: '2023-06-15',
+    type: 'expenses',
+    amount: 2000,
+    category: {
+      name: 'Телекоммуникации',
+      color: '#f04438'
+    }
+  },
+  {
+    id: 10,
+    name: 'Заработок на фрилансе',
+    date: '2023-07-15',
+    type: 'income',
+    amount: 6000,
+    category: {
+      name: 'Финансовый доход',
+      color: '#3bcc84'
+    }
+  },
+  {
+    id: 11,
+    name: 'Покупка одежды',
+    date: '2023-08-15',
+    type: 'expenses',
+    amount: 4000,
+    category: {
+      name: 'Одежда',
+      color: '#f04438'
+    }
+  },
+  {
+    id: 12,
+    name: 'Медицинская консультация',
+    date: '2023-09-15',
+    type: 'expenses',
+    amount: 1500,
+    category: {
+      name: 'Здравоохранение',
+      color: '#f04438'
+    }
+  },
+  {
+    id: 13,
+    name: 'Оплата коммунальных услуг',
+    date: '2023-10-15',
+    type: 'expenses',
+    amount: 4500,
+    category: {
+      name: 'Коммунальные услуги',
+      color: '#f04438'
+    }
+  },
+  {
+    id: 14,
+    name: 'Оплата ипотеки',
+    date: '2023-11-15',
+    type: 'expenses',
+    amount: 5000,
+    category: {
+      name: 'Ипотека',
+      color: '#f04438'
+    }
+  },
+  {
+    id: 15,
+    name: 'Покупка книг',
+    date: '2023-12-15',
+    type: 'expenses',
+    amount: 1200,
+    category: {
+      name: 'Образование',
       color: '#f04438'
     }
   }
