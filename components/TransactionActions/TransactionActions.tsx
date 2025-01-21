@@ -12,7 +12,7 @@ import styles from "./transactionActions.module.scss";
 
 interface IProps {
   isPopupOpen: boolean;
-  type: "incomes" | "expenses" | "empty" | "swap"
+  type: "incomes" | "expenses" | "empty" | "transfers"
 }
 
 export default function TransactionActions() {
@@ -58,7 +58,7 @@ export default function TransactionActions() {
         <TransactionButton
           onClick={() =>
             setPopupData({
-              type: "swap",
+              type: "transfers",
               isPopupOpen: true,
             })
           }
