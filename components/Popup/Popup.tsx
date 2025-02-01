@@ -46,7 +46,7 @@ export default function Popup({ type, onClose }: Props) {
             <label htmlFor="category" className={styles.label}>
               Категория
             </label>
-            <select id="category" className={styles.select}>
+            <select id="category" className={styles.select} required>
               <option value="" disabled selected hidden>
                 Выберите категорию
               </option>
@@ -58,12 +58,12 @@ export default function Popup({ type, onClose }: Props) {
       case "transfers":
         return (
           <>
-            <label htmlFor="wallet" className={styles.label}>
-              Кошелёк
+            <label htmlFor="payee" className={styles.label}>
+              Кошелёк получатель
             </label>
-            <select id="wallet" className={styles.select}>
+            <select id="payee" className={styles.select} required>
               <option value="" disabled selected hidden>
-                Выберите кошелёк
+                Выберите кошелёк получатель
               </option>
               <option>none</option>
               {/* опция для получения кошельков */}
@@ -85,19 +85,29 @@ export default function Popup({ type, onClose }: Props) {
           <h2 className={styles.heading}>{heading}</h2>
           <p className={styles.subheading}>{subheading}</p>
           <form className={styles.form}>
+            <label htmlFor="wallet" className={styles.label}>
+              Кошелёк
+            </label>
+            <select id="wallet" className={styles.select} required>
+              <option value="" disabled selected hidden>
+                Выберите кошелёк
+              </option>
+              <option>none</option>
+              {/* опция для получения кошельков */}
+            </select>
             {getFormField()}
             <label htmlFor="amount" className={styles.label}>
               Сумма
             </label>
-            <input id="amount" type="number" className={styles.input} />
+            <input id="amount" type="number" className={styles.input} required/>
             <label htmlFor="date" className={styles.label}>
               Дата
             </label>
-            <input id="date" type="date" className={styles.input} />
+            <input id="date" type="date" className={styles.input} required/>
             <label htmlFor="description" className={styles.label}>
               Описание
             </label>
-            <input id="description" type="text" className={styles.input} />
+            <input id="description" type="text" className={styles.input} required/>
             <div className={styles.buttonGroup}>
               <button type="reset" className={styles.resetButton}>
                 Сбросить

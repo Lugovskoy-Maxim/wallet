@@ -12,7 +12,7 @@ import styles from "./transactionActions.module.scss";
 
 interface IProps {
   isPopupOpen: boolean;
-  type: "incomes" | "expenses" | "empty" | "transfers"
+  type: "incomes" | "expenses" | "empty" | "transfers";
 }
 
 export default function TransactionActions() {
@@ -69,10 +69,7 @@ export default function TransactionActions() {
         />
       </ul>
       {isPopupData.isPopupOpen && (
-        <Popup
-          onClose={handleClose}
-          type={isPopupData.type}
-        />
+        <Popup onClose={handleClose} type={isPopupData.type} />
       )}
     </section>
   );
