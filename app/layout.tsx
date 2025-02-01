@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+// import Header from "@/components/Header/Header";
+// import Footer from "@/components/Footer/Footer";
 import CookieNotificationBanner from "@/components/CookieNotificationBanner/CookieNotificationBanner";
+import VerifyingUserRightsForPath from "@/helpers/VerifyingUserRightsForPath";
 
 const geistSans = localFont({
   src: "../public/fonts/GeistVF.woff",
@@ -27,13 +28,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const user = false;
+
   return (
     <html lang="ru">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
+        <VerifyingUserRightsForPath user={user}>
           <main>{children}</main>
-        <Footer />
-        <CookieNotificationBanner/>
+          <CookieNotificationBanner />
+        </VerifyingUserRightsForPath>
       </body>
     </html>
   );
