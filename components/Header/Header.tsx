@@ -12,14 +12,14 @@ export default function Header() {
     <header className={styles.header}>
       <Link href={"/"} className={styles.logo}>
         <Image src={logo_icon} alt="логотип" width={32} height={32} />
-        <span>Wallet Watch</span>
+        <span>Wallet</span>
       </Link>
       <nav>
         <Link href={"/"}>Обзор</Link>
         <Link href={"/transactions"}>Транзакции</Link>
-        <Link href={"#"}>Планирование</Link>
+        {/* <Link href={"#"}>Планирование</Link> */}
         <Link href={"#"}>Категории</Link>
-        <Link href={"#"}>Кошельки</Link>
+        {/* <Link href={"#"}>Кошельки</Link> */}
         {/* <Link href={"#"}>Аналитика</Link> */}
       </nav>
       <div className={styles.user}>
