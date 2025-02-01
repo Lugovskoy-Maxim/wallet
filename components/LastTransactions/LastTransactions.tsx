@@ -34,7 +34,7 @@ export default function LastTransactions() {
     )
   );
 
-  const [numberRecentTrans, setNumberRecentTrans] = useState(10); // Текущая страница
+  const [numberRecentTrans, setNumberRecentTrans] = useState(8); // Текущая страница
 
   const loadMoreTransactions = () => {
     setNumberRecentTrans(numberRecentTrans + 10);
