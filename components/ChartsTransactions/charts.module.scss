@@ -1,0 +1,23 @@
+.charts {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+
+  .chart {
+    align-items: center;
+    border: 1px solid var(--gray-100);
+    border-radius: 12px;
+    width: 100%;
+    padding: 12px;
+    margin: 0 auto; 
+    box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    span {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
