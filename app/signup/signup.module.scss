@@ -1,0 +1,132 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 627px;
+    text-align: center;
+    gap: 12px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        p {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: var(--gray-800);
+          margin: 0;
+        }
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--brand-500);
+        border: 1px solid var(--brand-400);
+        border-radius: 12px;
+        width: 176px;
+        height: 46px;
+        background: #fff;
+
+        &:hover {
+          background-color: var(--brand-500);
+          color: #fff;
+        }
+      }
+    }
+
+    h1 {
+      text-align: left;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      color: var(--gray-800);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 171%;
+        color: #8e8e8e;
+
+        &:focus {
+          outline: none;
+          border-color: var(--brand-600);
+        }
+      }
+
+      p {
+        text-align: left;
+        font-size: 0.875rem;
+        margin: 1rem 0;
+        color: var(--gray-800);
+      }
+
+      a {
+        width: 100%;
+        color: var(--brand-600);
+        text-decoration: none;
+        font-size: 0.875rem;
+        text-align: right;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      button {
+        border: 1px solid #d9d9d9;
+        border-radius: 12px;
+        width: 100%;
+        height: 54px;
+        background: var(--brand-600);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--brand-700);
+          border: 1px solid var(--brand-600);
+        }
+      }
+    }
+  }
+}
