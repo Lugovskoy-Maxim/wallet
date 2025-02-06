@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./cookie.module.scss";
 import cookie_icon from "../../public/cookie.svg";
 import { useEffect, useState } from "react";
-import { getCookie, setCookie } from "@/helpers/cookie";
+import { getCookie, setCookie } from "@/helpers/CookieHelper";
 
 export default function CookieNotificationBanner() {
   const [isVisible, setIsVisible] = useState(false);
