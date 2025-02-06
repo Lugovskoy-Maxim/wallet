@@ -32,7 +32,7 @@
         p {
           font-size: 1.5rem;
           font-weight: bold;
-          color: #333;
+          color: var(--gray-800);
           margin: 0;
         }
       }
@@ -87,13 +87,13 @@
 
         &:focus {
           outline: none;
-          border-color: #0070f3;
+          border-color: var(--brand-600);
         }
       }
 
       a {
         width: 100%;
-        color: #0070f3;
+        color: var(--brand-600);
         text-decoration: none;
         font-size: 0.875rem;
         text-align: right;

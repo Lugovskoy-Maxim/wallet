@@ -17,8 +17,8 @@ export default function SignIn() {
         </div>
         <h1>Войти</h1>
         <form>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Пароль" />
+          <input type="email" placeholder="Email" required/>
+          <input type="password" placeholder="Пароль" required/>
           <Link href="/forgot">Забыли пароль?</Link>
           <button type="submit">Войти</button>
         </form>
